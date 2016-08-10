@@ -29,16 +29,15 @@ public class Diamond {
 
 	public void playGame() {
 		for(Integer card : diamondCards){
-			System.out.println(diamondCardsMap[card]);
+			showCard(card);
 			int c = Computer.nextBid(card);
 			int p = Player.nextBid(card);
 			bidResult(c,p,card);
-			removeLastDiamondCard();
 		}
 	}
 
-	private void removeLastDiamondCard() {
-		diamondCards.remove(0);
+	public void showCard(int card) {
+		System.out.println(diamondCardsMap[card]);
 	}
 
 	private void bidResult(int c , int p , int diamondcard) {
